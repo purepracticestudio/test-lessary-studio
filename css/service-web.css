@@ -39,14 +39,18 @@
   .sec-label{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:10px;}
   .sec-title{font-size:clamp(24px,3vw,36px);font-weight:900;margin-bottom:12px;}
   .sec-sub{font-size:15px;color:var(--text-muted);margin-bottom:48px;line-height:1.8;}
-  .plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-  .plan-card{border-radius:20px;padding:36px;border:2px solid transparent;transition:border-color .3s,transform .3s,box-shadow .3s;}
+  .plans-grid{display:grid;grid-template-columns:1fr 1fr  1fr;gap:28px;}
+  .plan-card{border-radius:20px;padding:36px;border:2px solid transparent;transition:border-color .3s,transform .3s,box-shadow .3s;  /* --- 新增以下四行 --- */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* 確保 padding 不會撐破卡片 */
+  position: relative;     /* 保留彈性，若未來要微調可定位 */}
   .plan-card-a{background:var(--primary);color:var(--white);}
   .plan-card-b{background:var(--bg);color:var(--primary);border:1.5px solid rgba(42,50,75,0.08);}
   .plan-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(42,50,75,0.14);}
   .plan-card-a:hover{border-color:var(--accent);}
   .plan-card-b:hover{border-color:var(--primary);}
-  .plan-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px;}
+  .plan-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px; align-self: flex-start; /* --- 新增這行，阻止 Flex 將它撐滿 --- */}
   .plan-card-a .plan-badge{background:var(--accent);color:var(--primary);}
   .plan-card-b .plan-badge{background:var(--primary);color:var(--white);}
   .plan-title{font-size:22px;font-weight:900;margin-bottom:12px;}
@@ -107,7 +111,7 @@
 
   /* PRICE */
   .price-section{background:var(--bg);padding:64px 80px;}
-  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
   .price-card{border-radius:20px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
   .price-card-a{background:var(--primary);}
   .price-card-b{background:var(--white);border:1.5px solid rgba(42,50,75,0.08);}
@@ -124,7 +128,11 @@
   .pc-tag{display:inline-block;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:8px;letter-spacing:.04em;}
   .price-card-a .pc-tag{background:rgba(137,222,124,0.18);color:var(--accent);}
   .price-card-b .pc-tag{background:rgba(42,50,75,0.07);color:var(--primary);}
-  .pc-right{display:flex;align-items:baseline;gap:4px;flex-shrink:0;}
+  .pc-right{display:flex;align-items:baseline;gap:4px;flex-shrink:0;  
+  /* --- 新增以下三行 --- */
+  margin-top: auto;            /* 自動推到卡片最底部 */
+  justify-content: flex-end;   /* 內容靠右對齊 */
+  padding-top: 24px;           /* 與上方內容（BEST FOR）保持舒適距離 */}
   .pc-from{font-size:13px;font-weight:500;}
   .price-card-a .pc-from{color:rgba(255,255,255,0.5);}
   .price-card-b .pc-from{color:var(--text-muted);}

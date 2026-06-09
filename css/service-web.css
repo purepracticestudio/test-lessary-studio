@@ -206,6 +206,7 @@
     .port-grid,.port-extra{grid-template-columns:1fr;}
     .steps-row{grid-template-columns:1fr 1fr;gap:24px;}
     .steps-row::before{display:none;}
-     .port-item{spect-ratio:height;}
+    .port-item{spect-ratio:height;}
     footer{grid-template-columns:1fr;gap:32px;padding:48px 28px;}
+    .faq-section{padding:28px;}
   }

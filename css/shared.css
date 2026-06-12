@@ -15,6 +15,17 @@
   --text-light:  #767B91;
   --nav-h:       64px;
   --line-green:  #06C755;
+
+  /* ── 文字設計系統 Typography Scale ── */
+  --text-caption:  0.875rem; /* 14px — label / tag / breadcrumb */
+  --text-sm:       0.9rem; /* 16px — footnote / meta / nav-sub */
+  --text-body:     1rem;  /* 16px — body 正文 / button */
+  --text-body-lg:  1.125rem; /* 18px — body large / section paragraph */
+  --text-h5:       1rem;      /* 19px — card title / footer logo */
+  --text-h4:       1.25rem;  /* 20px — sub-section title */
+  --text-h3:       1.5rem;  /* 24px — section card title */
+  --text-h2:       2rem;   /* 32px — founder / about heading */
+  --text-h1:       clamp(1.625rem, 4.5vw, 3.625rem); /* 26–58px — hero / page title */
 }
 
 /* ── Reset ── */
@@ -52,7 +63,7 @@ body {
 .logo-mark { width: 32px; height: 32px; display: flex; align-items: center; }
 .logo-mark img { width: 100%; height: auto; display: block; }
 .logo-text {
-  font-size: 14px; font-weight: 700; letter-spacing: .05em;
+  font-size: var(--text-body); font-weight: 700; letter-spacing: .05em;
   color: var(--primary); white-space: nowrap;
 }
 
@@ -62,7 +73,7 @@ body {
   gap: 8px; list-style: none; margin: 0; padding: 0;
 }
 .nav-links li a {
-  font-size: 13.5px; font-weight: 500; color: var(--primary);
+  font-size: var(--text-sm); font-weight: 500; color: var(--primary);
   text-decoration: none; letter-spacing: .04em; opacity: .72;
   padding: 6px 14px; border-radius: 30px;
   transition: opacity .2s, background .2s;
@@ -116,7 +127,7 @@ body {
 
   .nav-links li a {
     display: block; padding: 14px 32px;
-    border-radius: 0; font-size: 15px;
+    border-radius: 0; font-size: var(--text-body-lg);
     border-bottom: 1px solid rgba(42,50,75,0.05);
   }
   .nav-links li:last-child a { border-bottom: none; }
@@ -139,7 +150,7 @@ body {
     display: flex; align-items: center; justify-content: center;
     background: none; border: none; border-left: 1px solid rgba(42,50,75,0.07);
     cursor: pointer; color: var(--primary);
-    font-size: 24px; opacity: .5;
+    font-size: var(--text-h2); opacity: .5;
     transition: opacity .2s, background .2s;
   }
   .sub-toggle:hover { opacity: 1; background: rgba(42,50,75,0.04); }
@@ -154,7 +165,7 @@ body {
   .nav-sub.is-open { display: block; }
   .nav-sub li a {
     padding: 11px 32px 11px 52px;
-    font-size: 13.5px; color: var(--text-muted);
+    font-size: var(--text-sm); color: var(--text-muted);
     border-bottom: 1px solid rgba(42,50,75,0.04);
   }
   .nav-sub li:last-child a { border-bottom: none; }
@@ -184,7 +195,7 @@ body {
     display: inline-flex; align-items: center; gap: 4px;
   }
   .desktop-arrow {
-    font-size: 24px; opacity: .5; display: inline-block;
+    font-size: var(--text-h2); opacity: .5; display: inline-block;
     transition: transform .25s;
   }
   .nav-links li.has-sub:hover > a .desktop-arrow,
@@ -223,7 +234,7 @@ body {
 
   .nav-sub li a {
     display: block; padding: 10px 20px;
-    font-size: 13px; font-weight: 500;
+    font-size: var(--text-sm); font-weight: 500;
     color: var(--primary); opacity: .8;
     text-decoration: none; white-space: nowrap;
     border-radius: 0; background: none;
@@ -241,7 +252,7 @@ body {
 /* ── BREADCRUMB ── */
 .breadcrumb {
   padding: calc(var(--nav-h) + 28px) 80px 0;
-  font-size: 12px; color: var(--text-light);
+  font-size: var(--text-caption); color: var(--text-light);
   display: flex; align-items: center; gap: 8px;
 }
 .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color .2s; }
@@ -252,7 +263,7 @@ body {
 .btn-primary {
   background: var(--primary); color: var(--white);
   padding: 14px 32px; border-radius: 40px;
-  font-size: 14px; font-weight: 700; text-decoration: none;
+  font-size: var(--text-body); font-weight: 700; text-decoration: none;
   display: inline-block; transition: background .25s, transform .25s;
 }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
@@ -263,7 +274,7 @@ body {
   background: transparent; color: var(--primary);
   padding: 14px 28px; border-radius: 40px;
   border: 1.5px solid var(--primary);
-  font-size: 14px; font-weight: 500; text-decoration: none;
+  font-size: var(--text-body); font-weight: 500; text-decoration: none;
   display: inline-block; transition: border-color .2s, color .2s, transform .2s;
 }
 .btn-secondary:hover { border-color: var(--accent-dark); color: var(--accent-dark); transform: translateY(-2px); }
@@ -271,7 +282,7 @@ body {
 .btn-accent {
   background: var(--accent); color: var(--primary);
   padding: 14px 32px; border-radius: 40px;
-  font-size: 14px; font-weight: 700; text-decoration: none;
+  font-size: var(--text-body); font-weight: 700; text-decoration: none;
   display: inline-block; transition: background .25s, transform .25s;
 }
 .btn-accent:hover { background: var(--accent-dark); color: var(--white); transform: translateY(-2px); }
@@ -280,7 +291,7 @@ body {
   background: transparent; color: var(--primary);
   padding: 13px 24px; border-radius: 40px;
   border: 1.5px solid currentColor;
-  font-size: 14px; font-weight: 500; text-decoration: none;
+  font-size: var(--text-body); font-weight: 500; text-decoration: none;
   display: inline-block; transition: color .2s, transform .2s;
 }
 .btn-ghost:hover { color: var(--accent-dark); transform: translateY(-2px); }
@@ -289,14 +300,14 @@ body {
   background: transparent; color: rgba(255,255,255,0.7);
   padding: 13px 24px; border-radius: 40px;
   border: 1.5px solid rgba(255,255,255,0.25);
-  font-size: 14px; font-weight: 500; text-decoration: none;
+  font-size: var(--text-body); font-weight: 500; text-decoration: none;
   display: inline-block; transition: all .2s;
 }
 .btn-ghost-light:hover { color: var(--white); border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
 
 /* ── SECTION 共用 ── */
 .section-label {
-  font-size: 11px; font-weight: 700; letter-spacing: .2em;
+  font-size: var(--text-caption); font-weight: 700; letter-spacing: .2em;
   text-transform: uppercase; color: var(--accent-dark); margin-bottom: 12px;
 }
 .section-title {
@@ -304,7 +315,7 @@ body {
   color: var(--primary); margin-bottom: 20px; line-height: 1.3;
 }
 .sec-label {
-  font-size: 11px; font-weight: 700; letter-spacing: .2em;
+  font-size: var(--text-caption); font-weight: 700; letter-spacing: .2em;
   text-transform: uppercase; color: var(--accent-dark); margin-bottom: 10px;
 }
 .sec-title {
@@ -317,14 +328,14 @@ footer {
   padding: 60px 80px;
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
 }
-.footer-brand .logo { font-size: 16px; font-weight: 700; letter-spacing: .08em; margin-bottom: 12px; }
-.footer-brand p { font-size: 13px; opacity: .5; line-height: 1.8; max-width: 260px; }
+.footer-brand .logo { font-size: var(--text-h5); font-weight: 700; letter-spacing: .08em; margin-bottom: 12px; }
+.footer-brand p { font-size: var(--text-sm); opacity: .5; line-height: 1.8; max-width: 260px; }
 .footer-col h4 {
-  font-size: 11px; font-weight: 700; letter-spacing: .16em;
+  font-size: var(--text-caption); font-weight: 700; letter-spacing: .16em;
   text-transform: uppercase; opacity: .4; margin-bottom: 16px;
 }
 .footer-col a {
-  display: block; font-size: 13px; opacity: .7;
+  display: block; font-size: var(--text-sm); opacity: .7;
   text-decoration: none; color: var(--white);
   margin-bottom: 8px; transition: opacity .2s;
 }
@@ -333,12 +344,12 @@ footer {
   background: var(--primary); text-align: center;
   padding: 20px; border-top: 1px solid rgba(255,255,255,0.08);
 }
-.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer-bottom p { font-size: var(--text-caption); color: rgba(255,255,255,0.35); }
 
 /* ── CTA BAND ── */
 .cta-band { background: var(--accent); padding: 80px; text-align: center; }
 .cta-band h2 { font-size: clamp(24px, 3vw, 38px); font-weight: 900; color: var(--primary); margin-bottom: 12px; }
-.cta-band p { font-size: 15px; color: var(--primary); opacity: .7; margin-bottom: 32px; }
+.cta-band p { font-size: var(--text-body-lg); color: var(--primary); opacity: .7; margin-bottom: 32px; }
 
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
@@ -361,12 +372,12 @@ footer {
   display: flex; align-items: flex-end; padding: 20px;
 }
 .port-item:hover .port-overlay { opacity: 1; }
-.port-label { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: .04em; }
+.port-label { font-size: var(--text-sm); font-weight: 700; color: var(--white); letter-spacing: .04em; }
 .port-extra { display: none; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
 .port-extra.open { display: grid; }
 .port-toggle {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; font-weight: 700; color: var(--accent-dark);
+  font-size: var(--text-sm); font-weight: 700; color: var(--accent-dark);
   background: none; border: 1.5px solid var(--accent-dark);
   padding: 9px 20px; border-radius: 30px; cursor: pointer;
   transition: background .2s, color .2s; margin-top: 28px;
@@ -396,13 +407,13 @@ footer {
 .ps-num {
   width: 40px; height: 40px; border-radius: 50%;
   background: rgba(137,222,124,0.12); border: 1px solid var(--accent);
-  color: var(--accent); font-size: 13px; font-weight: 900;
+  color: var(--accent); font-size: var(--text-sm); font-weight: 900;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 16px; transition: background .25s, transform .25s;
 }
 .proc-step:hover .ps-num { background: var(--accent); color: var(--primary); transform: scale(1.1); }
-.ps-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-.ps-desc { font-size: 11.5px; opacity: .55; line-height: 1.6; }
+.ps-title { font-size: var(--text-sm); font-weight: 700; margin-bottom: 6px; }
+.ps-desc { font-size: var(--text-caption); opacity: .55; line-height: 1.6; }
 
 /* ── RESPONSIVE 共用 ── */
 @media (max-width: 900px) {
